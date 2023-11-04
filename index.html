@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock</title>
+ <link rel="icon" href="/clock.jpg">
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      border: 2px solid white;
+      border-radius: 20px;
+    }
+
+    body {
+      background: linear-gradient(630deg, black, gray);
+
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-size: 30px;
+      filter: drop-shadow(0 0 10px blue);
+      animation: glow 7s alternate infinite;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @keyframes glow {
+      0% {
+        filter: drop-shadow(0 0 10px red);
+      }
+
+      25% {
+        filter: drop-shadow(0 0 10px rgb(7, 241, 7));
+      }
+      50%{
+        filter: drop-shadow(0 0 10px purple);
+      }
+      75%{
+        filter: drop-shadow(0 0 10px yellow);
+      }
+      100% {
+        filter: drop-shadow(0 0 10px blue);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1 style="text-align: center"></h1>
+  </div>
+  <script>
+    setInterval(function () {
+      const dt = new Date();
+      document.querySelector("h1").innerText = dt; //.toLocaleTimeString(); // for only date
+    }, "1000");
+  </script>
+</body>
+
+</html>
